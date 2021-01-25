@@ -3,8 +3,8 @@ AS	=gas
 LD	=gld
 LDFLAGS	=-s -x
 CC	=gcc
-CFLAGS	=-Wall -O -fstrength-reduce -fomit-frame-pointer -fcombine-regs \
-	-finline-functions -mstring-insns -nostdinc -I../include
+CFLAGS	=-Wall -O -fstrength-reduce -fomit-frame-pointer \
+	-finline-functions -nostdinc -I../include
 CPP	=gcc -E -nostdinc -I../include
 
 .c.s:
@@ -79,4 +79,4 @@ tty_io.s tty_io.o : tty_io.c ../include/ctype.h ../include/errno.h \
   ../include/linux/head.h ../include/linux/fs.h ../include/linux/mm.h \
   ../include/linux/tty.h ../include/termios.h ../include/asm/segment.h \
   ../include/asm/system.h
-vsprintf.s vsprintf.o : vsprintf.c ../include/stdarg.h ../include/string.h 
+vsprintf.s vsprintf.o : vsprintf.c ../include/stdarg.h ../include/string.h
